@@ -1,0 +1,24 @@
+{
+    "firstName": "Rack",
+    "lastName": "Jackon",
+    "gender": "man",
+    "age": 24,
+    "address": {
+        "streetAddress": "126",
+        "city": "San Jone",
+        "state": "CA",
+        "postalCode": "394221"
+    },
+    "ConsistencyPoints" : "100",
+    "phoneNumbers": [
+        { "type": "home", "number": "7383627627" }
+    ],
+    "AcademicPoints" : "25",
+    "Student_Assigned_Topics":[
+      {"topic":"Data Science"},
+      {"topic":"Machine Learning"}
+    ],
+    "Student_Favourite_Topics":[
+      {"topic":"Machine Learning"}
+    ]
+}

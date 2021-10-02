@@ -1,0 +1,13 @@
+{
+    "Likes" : "10",
+    "Dislikes":"5",
+    "comment":[
+      {"value":"This is a good content"}
+    ],
+    "tag":[
+      {"value":"Supervised Learning"}
+    ],
+    "category": [
+        {"value":"Machine Learning"}
+    ]
+}
