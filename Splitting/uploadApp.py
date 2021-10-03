@@ -52,8 +52,6 @@ def get_post_javascript_data():
 
 @app.route('/upload', methods=['post'])
 def upload():
-    print(likes)
-    print(dislikes)
     if request.method == 'POST':
         img = request.files['file']
         print(img)
