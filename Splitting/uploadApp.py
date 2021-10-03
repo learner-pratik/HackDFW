@@ -18,7 +18,8 @@ print(reel_collection)
 reels = []
 reel_collection.find()
 print(reels)
-
+S3_datafram = pd.DataFrame(pd.read_excel("ReelsData.xlsx"))
+print(S3_datafram.head())
 s3 = boto3.client('s3',
                   aws_access_key_id="AKIA3T5ONG3LCVYX7E24",
                   aws_secret_access_key="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",
@@ -61,6 +62,9 @@ def upload():
             comment = ["This is a good content","I understood it clearly"]
             likes = 25
             dislikes = 5
+            push_ddict = {"Likes": likes, "Dislikes": dislikes, "comment": comment,
+                          "URL": url, "topic": topic, "topoc": topic, "Tag": categories, "URL": url}
+            S3_datafram.append(push_ddict)
 
             msg = "Upload Done ! "
 
@@ -69,5 +73,6 @@ def upload():
 
 if __name__ == "__main__":
     app.run(debug=True)
+
 
     
