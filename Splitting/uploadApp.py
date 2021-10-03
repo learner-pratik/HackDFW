@@ -7,10 +7,18 @@ import pymongo
 from pymongo import MongoClient
 import VideoSplit as vs
 app = Flask(__name__)
+client = pymongo.MongoClient(
+    "mongodb+srv://AnirudhT94:Devika@cluster0.unlyn.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
+db = client["AmazonEducationHack"]
+reel_collection = db["Reel"]
+print(reel_collection)
+reels = []
+reel_collection.find()
+print(reels)
 
 s3 = boto3.client('s3',
-                  aws_access_key_id="keys.ACCESS_KEY_ID",
-                  aws_secret_access_key="keys.ACCESS_SECRET_KEY",
+                  aws_access_key_id="AKIA3T5ONG3LCVYX7E24",
+                  aws_secret_access_key="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",
                   aws_session_token="keys.AWS_SESSION_TOKEN"
                   )
 
@@ -51,7 +59,12 @@ def upload():
             img.save(filename)
             SplitVideos = vs.SpitVideoFunc(filename)
             print(SplitVideos)
-            
+            for filename in SplitVideos:
+                s3.upload_file(
+                    Bucket=BUCKET_NAME,
+                    Filename=filename,
+                    Key=filename
+                )
             
             msg = "Upload Done ! "
 
@@ -59,15 +72,6 @@ def upload():
 
 
 if __name__ == "__main__":
-
-    uri = "mongodb+srv://AnirudhT94:Devika@cluster0.unlyn.mongodb.net/AmazonEducationHack?retryWrites=true&w=majority"
-    client = pymongo.MongoClient(uri)
-    db = client["AmazonEducationHack"]
-    reel_collection = db["Reel"]
-    reels = []
-    #for reel in reel_collection.find({},{}):
-    #    reels.append(reel)
-    print(reels)
     app.run(debug=True)
 
     
