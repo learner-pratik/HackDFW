@@ -1,82 +1,162 @@
 <!DOCTYPE html>
 <html lang="en" >
-<head>
-  <meta charset="UTF-8">
-  <title>CodePen - Swipe Video Cards VIDEO</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-  <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet" type='text/css'>
-  <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
-</head>
-<body>
-<!-- partial:index.partial.html -->
-<div class="elements">
-  <div class="container">
-    <div class="slide slide1 index4">
-      <video id="paris" height="310" autoplay="autoplay" muted="muted" loop="loop" poster="https://ottball.com/content/images/2020/06/image-3.png">//, controls)
-        <source src="https://storage.googleapis.com/ottball-b-1/videos/tos/youcompress.mp4" type="video/mp4"/>Your browser doesn't support HTML5 video tag.
-      </video>
+  <head>
+    <meta charset="UTF-8">
+    <title>Dot Educated</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet" type='text/css'>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/style.css">
+  </head>
+  <body>
+  <!-- partial:index.partial.html -->
+  <nav class="navbar navbar-expand-lg navbar-default navbar-custom">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img class="logo" src='../static/logo1.jpeg'>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Reels</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Students
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled">Quiz</a>
+          </li>
+        </ul>
+        <form class="nav-item d-flex">
+          <input style="margin-right: 5px;" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button style="color: #E12323; border-color: #E12323;" class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
     </div>
-    <div class="slide index3">
-      <video id="italy" height="310" muted="muted" loop="loop" poster="https://ottball.com/content/images/2020/06/image-3.png">
-        <source src="https://storage.googleapis.com/ottball-b-1/videos/tos/youcompress.mp4" type="video/mp4"/>Your browser doesn't support HTML5 video tag.
-      </video>
+  </nav>
+  
+  <div class="elements">
+    <div class="container">
+      <div class="slide slide1 index4">
+        <video id="paris" height="310" loop="loop" poster="https://ottball.com/content/images/2020/06/image-3.png">//, controls)
+          <source src="https://storage.googleapis.com/ottball-b-1/videos/tos/youcompress.mp4" type="video/mp4"/>Your browser doesn't support HTML5 video tag.
+        </video>
+      </div>
+      <div class="slide index3">
+        <video id="italy" height="310" loop="loop" poster="https://ottball.com/content/images/2020/06/image-3.png">
+          <source src="https://storage.googleapis.com/ottball-b-1/videos/tos/youcompress.mp4" type="video/mp4"/>Your browser doesn't support HTML5 video tag.
+        </video>
+      </div>
+      <div class="slide index2">
+        <video id="hongkong" height="310" loop="loop" poster="https://ottball.com/content/images/2020/06/image-3.png">
+          <source src="https://storage.googleapis.com/ottball-b-1/videos/tos/youcompress.mp4" type="video/mp4"/>Your browser doesn't support HTML5 video tag.
+        </video>
+      </div>
+      <div class="slide index1">
+        <video id="prog" height="310" loop="loop" poster="https://ottball.com/content/images/2020/06/image-3.png">
+          <source src="https://storage.googleapis.com/ottball-b-1/videos/tos/youcompress.mp4" type="video/mp4"/>Your browser doesn't support HTML5 video tag.
+        </video>
+      </div>
     </div>
-    <div class="slide index2">
-      <video id="hongkong" height="310" muted="muted" loop="loop" poster="https://ottball.com/content/images/2020/06/image-3.png">
-        <source src="https://storage.googleapis.com/ottball-b-1/videos/tos/youcompress.mp4" type="video/mp4"/>Your browser doesn't support HTML5 video tag.
-      </video>
-    </div>
-    <div class="slide index1">
-      <video id="prog" height="310" muted="muted" loop="loop" poster="https://ottball.com/content/images/2020/06/image-3.png">
-        <source src="https://storage.googleapis.com/ottball-b-1/videos/tos/youcompress.mp4" type="video/mp4"/>Your browser doesn't support HTML5 video tag.
-      </video>
+    <div class="description">
+      <div class="description__country"><span>Paris, France</span>
+      </div>
+      <div class="description__country hide"><span>La Crusc, Italy</span>
+      </div>
+      <div class="description__country hide"><span>Hong Kong, China</span>
+      </div>
+      <div class="description__country hide"><span>Thx for watching</span>
+      </div>
+      <div class="description__line"></div>
+      <div class="description__text">
+        <button class="like">
+          <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+        </button>
+        <button class="dislike">
+          <i class="fa fa-thumbs-o-down" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div class="description__text hide">
+        <button class="like">
+          <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+        </button>
+        <button class="dislike">
+          <i class="fa fa-thumbs-o-down" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div class="description__text hide">
+        <button class="like">
+          <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+        </button>
+        <button class="dislike">
+          <i class="fa fa-thumbs-o-down" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div class="description__text hide">
+        <button class="like">
+          <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+        </button>
+        <button class="dislike">
+          <i class="fa fa-thumbs-o-down" aria-hidden="true"></i>
+        </button>
+      </div>
     </div>
   </div>
-  <div class="description">
-    <div class="description__country"><span>Paris, France</span>
-    </div>
-    <div class="description__country hide"><span>La Crusc, Italy</span>
-    </div>
-    <div class="description__country hide"><span>Hong Kong, China</span>
-    </div>
-    <div class="description__country hide"><span>Thx for watching</span>
-    </div>
-    <div class="description__line"></div>
-    <div class="description__text">
-      <button class="like">
-        <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
-      </button>
-      <button class="dislike">
-        <i class="fa fa-thumbs-o-down" aria-hidden="true"></i>
-      </button>
-    </div>
-    <div class="description__text hide">
-      <button class="like">
-        <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
-      </button>
-      <button class="dislike">
-        <i class="fa fa-thumbs-o-down" aria-hidden="true"></i>
-      </button>
-    </div>
-    <div class="description__text hide">
-      <button class="like">
-        <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
-      </button>
-      <button class="dislike">
-        <i class="fa fa-thumbs-o-down" aria-hidden="true"></i>
-      </button>
-    </div>
-    <div class="description__text hide">
-      <button class="like">
-        <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
-      </button>
-      <button class="dislike">
-        <i class="fa fa-thumbs-o-down" aria-hidden="true"></i>
-      </button>
-    </div>
-  </div>
-</div>
 <!-- partial -->
+
+  <script>
+
+    // var likes = 0;
+    // var dislikes = 0;
+    var likes = {{ likes }};
+    var dislikes = {{ dislikes }};
+
+    function like() {
+      likes = likes+1;
+      console.log(likes);
+      console.log(dislikes);
+      var data = { "likes": likes, "dislikes": dislikes}
+      $.ajax({
+        type: "POST",
+        url: "/likes_dislikes",
+        data: data,
+        success: console.log("success"),
+        dataType: "json"
+      });
+    }
+
+    function dislike() {
+      dislikes = dislikes+1;
+      console.log(likes);
+      console.log(dislikes);
+      var data = { "likes": likes, "dislikes": dislikes}
+      $.ajax({
+        type: "POST",
+        url: "/likes_dislikes",
+        data: data,
+        success: console.log("success"),
+        dataType: "json"
+      });
+    }
+
+  </script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script><script  src="../static/script.js"></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
   <script src="{{url_for('static', filename='script.js')}}"></script>
 
