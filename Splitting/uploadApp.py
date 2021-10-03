@@ -16,19 +16,32 @@ s3 = boto3.client('s3',
 
 BUCKET_NAME = 'hackershrine'
 
+likes = 0
+dislikes = 0
 
 @app.route('/')
 def home():
+    print(likes)
+    print(dislikes)
     return render_template("file_upload_to_s3.html")
 
 
 @app.route('/reels')
 def reels():
-    return render_template("reels.html")
+    return render_template("reels.html", likes=likes, dislikes=dislikes)
+
+
+@app.route('/likes_dislikes', methods = ['POST'])
+def get_post_javascript_data():
+    jsdata = request.get_data()
+    print(jsdata)
+    return jsdata
 
 
 @app.route('/upload', methods=['post'])
 def upload():
+    print(likes)
+    print(dislikes)
     if request.method == 'POST':
         img = request.files['file']
         print(img)
