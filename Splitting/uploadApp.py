@@ -3,6 +3,8 @@
 from werkzeug.utils import secure_filename
 from flask import Flask, render_template, request
 import boto3
+import pymongo
+from pymongo import MongoClient
 import VideoSplit as vs
 app = Flask(__name__)
 
@@ -18,6 +20,11 @@ BUCKET_NAME = 'hackershrine'
 @app.route('/')
 def home():
     return render_template("file_upload_to_s3.html")
+
+
+@app.route('/reels')
+def reels():
+    return render_template("reels.html")
 
 
 @app.route('/upload', methods=['post'])
@@ -40,4 +47,14 @@ def upload():
 
 if __name__ == "__main__":
 
+    uri = "mongodb+srv://AnirudhT94:Devika@cluster0.unlyn.mongodb.net/AmazonEducationHack?retryWrites=true&w=majority"
+    client = pymongo.MongoClient(uri)
+    db = client["AmazonEducationHack"]
+    reel_collection = db["Reel"]
+    reels = []
+    #for reel in reel_collection.find({},{}):
+    #    reels.append(reel)
+    print(reels)
     app.run(debug=True)
+
+    
