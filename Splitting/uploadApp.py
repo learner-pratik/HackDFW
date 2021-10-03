@@ -6,6 +6,9 @@ import boto3
 import pymongo
 from pymongo import MongoClient
 import VideoSplit as vs
+import numpy as np
+import pandas as pd
+
 app = Flask(__name__)
 client = pymongo.MongoClient(
     "mongodb+srv://AnirudhT94:Devika@cluster0.unlyn.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
@@ -51,8 +54,14 @@ def upload():
                     Bucket=BUCKET_NAME,
                     Filename=filename,
                     Key=filename
-                )
-            
+                )   
+            url = ""
+            topic = "Artificial Integence"
+            categories = ["#supervisedLearning","#nlp"]
+            comment = ["This is a good content","I understood it clearly"]
+            likes = 25
+            dislikes = 5
+
             msg = "Upload Done ! "
 
     return render_template("file_upload_to_s3.html", msg=msg)
